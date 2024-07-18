@@ -1,0 +1,9 @@
+class Solution(object):
+    def findDuplicate(self, nums):
+        l = len(nums)
+        newnum = [0] * l
+        for num in nums:
+            newnum[num] += 1
+        for i in range(l):
+            if newnum[i] > 1:
+                return i
