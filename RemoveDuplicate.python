@@ -1,0 +1,12 @@
+class Solution(object):
+    def removeDuplicates(self, nums):
+        count=0
+        l=len(nums)
+        for i in range(l):
+            if(i<l-1 and nums[i]==nums[i+1]):
+                continue
+            else:
+                nums[count]=nums[i] #  this is the line which makes the difference it is the line which stores the newly expected array
+                count+=1
+        return count
+        
