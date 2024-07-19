@@ -1,0 +1,19 @@
+class Solution(object):
+    def luckyNumbers(self, matrix):
+        m = len(matrix)
+        n = len(matrix[0])
+        lucky_numbers = []
+
+        for i in range(m):
+            row_min = min(matrix[i])
+            rowMinCol = matrix[i].index(row_min)
+            
+            col_max = float("-inf")
+            for k in range(m):
+                if col_max < matrix[k][rowMinCol]:
+                    col_max = matrix[k][rowMinCol]
+            
+            if row_min == col_max:
+                lucky_numbers.append(row_min)
+        
+        return lucky_numbers
